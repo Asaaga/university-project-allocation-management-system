@@ -1,0 +1,13 @@
+<?php
+include("../db.php");
+
+if (isset($_GET['id'])) {
+
+	$id = $_GET['id'];
+
+	$sql = "UPDATE propose_project SET project_id='0' WHERE id='$id'";
+
+	mysqli_query($conn,$sql);
+	header("Location:view_students.php");
+	exit();
+}
